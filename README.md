@@ -1,71 +1,78 @@
-# Lecture AI - Transform Your Lectures
+# 🎓 Lecture AI – Automated Lecture Understanding System
 
-Ever had a pile of lecture recordings and no time to organize them? Yeah, me too. That's why I built **Lecture AI**.
-
-This tool takes your lecture audio and automatically converts it into three useful formats:
-
-- **Flashcards** for quick revision
-- **Complete Notes** with full content structured
-- **Summary** with just the key points
-
-No manual transcription. No hours of note-taking. Just upload, wait a couple minutes, and get organized study materials.
+Lecture AI is an **AI/ML-focused project** developed as part of an **AIML internship learning track**. It transforms raw lecture audio into structured academic content using **pre-trained speech and language models**.
+The primary focus is on **AI pipeline design, model integration, and knowledge representation**, not UI/UX.
 
 ---
 
-## ⚡ What It Does
+## 🔗 Live Demo (Streamlit App)
 
-1. **Listens to Your Lecture** - Upload MP3, WAV, OGG, or M4A (up to 30 minutes)
-2. **Transcribes Automatically** - Converts speech to text using AI
-3. **Organizes Everything** - Cleans up the text, extracts key points
-4. **Generates 3 Formats** - Flashcards, detailed notes, and summary all at once
+👉 **Try the application here:**
+[https://lecture-ai-kartik-y-01.streamlit.app/](https://lecture-ai-kartik-y-01.streamlit.app/)
 
-**Result:** Professional study materials in 2-4 minutes instead of spending hours manually.
+> Note: The UI is intentionally minimal to keep the focus on AI/ML functionality.
 
 ---
 
-## 🚀 How to Use
+## 🎯 Project Objective
 
-### Quick Start
+To automate the conversion of lecture recordings into usable study material, reducing manual effort and improving learning efficiency using modern AI models.
 
-```bash
-# 1. Clone the repo
-git clone https://github.com/YOUR_USERNAME/Lecture-AI.git
-cd Lecture-AI
+---
 
-# 2. Create virtual environment
-python -m venv venv
-venv\Scripts\activate  # Windows
-source venv/bin/activate  # Mac/Linux
+## 🧠 Core Features
 
-# 3. Install dependencies
-pip install -r requirements.txt
+The system automatically generates:
 
-# 4. Run the app
-streamlit run app.py
+* 📘 **Detailed Notes** for deep conceptual understanding
+* 🧠 **Flashcards** for quick revision
+* 📝 **Concise Summary** for rapid recall
+
+All outputs are generated directly from raw lecture audio using pre-trained AI models.
+
+---
+
+## ⚙️ System Workflow
+
+```
+Lecture Audio
+        ↓
+Speech-to-Text (Whisper ASR)
+        ↓
+Raw Transcript
+        ↓
+Text Cleaning & Structuring
+        ↓
+Knowledge Representation Layer
+        ↓
+├── Flashcards
+├── Complete Notes
+└── Summary
 ```
 
-Then open `http://localhost:8501` in your browser.
+---
+
+## 🔬 AI / ML Focus
+
+This project is designed to demonstrate **practical AI pipeline implementation**:
+
+* Uses **pre-trained models** (no rule-based logic)
+* Integrates **Speech-to-Text and NLP models**
+* Emphasizes **pipeline orchestration**
+* Highlights **model capabilities and limitations**
+* UI kept minimal to prioritize AI learning outcomes
 
 ---
 
-## 📋 Features
+## 🛠️ Technologies Used
 
-✅ **Automatic Speech Recognition** - Whisper AI converts audio to text  
-✅ **Smart Text Processing** - Cleans up transcription, extracts key points  
-✅ **Multiple Output Formats** - Get flashcards, notes, and summary  
-✅ **Fast Processing** - 30 min audio processed in 2-4 minutes (CPU)  
-✅ **Clean UI** - Professional interface, easy to use  
-✅ **Free & Open Source** - No subscriptions, completely offline
+* **Python**
+* **Streamlit** – Lightweight interface for interaction
+* **Hugging Face Transformers**
 
----
-
-## 🛠️ Built With
-
-- **Streamlit** - Web interface
-- **OpenAI Whisper** - Speech-to-text
-- **NLTK** - Text processing
-- **Facebook BART** - Summarization
-- **PyTorch** - ML framework
+  * Whisper (Speech-to-Text)
+  * FLAN-T5 (Text Generation)
+* **PyTorch** – Model execution backend
 
 ---
 
@@ -74,105 +81,60 @@ Then open `http://localhost:8501` in your browser.
 | Component       | Technology             |
 | --------------- | ---------------------- |
 | Frontend        | Streamlit              |
-| STT             | Whisper (Hugging Face) |
-| Text Processing | NLTK                   |
-| Summarization   | Facebook BART          |
-| ML Framework    | PyTorch                |
+| Speech-to-Text  | Whisper (Hugging Face) |
+| Text Generation | FLAN-T5                |
+| ML Backend      | PyTorch                |
 
 ---
 
-## 💾 File Structure
+## 📁 Project Structure
 
 ```
 Lecture-AI/
-├── app.py                  # Main Streamlit application
-├── requirements.txt        # Python dependencies
-├── README.md              # This file
-└── src/
-    ├── stt_engine.py      # Speech-to-text processing
-    ├── text_processor.py  # Text cleaning & structuring
-    └── llm_formatter.py   # Output generation
+├── app.py                  # Streamlit application
+├── stt.py                  # Speech-to-text module
+├── text_processing.py      # Text cleaning & structuring
+├── knowledge.py            # Notes, summary & flashcard generation
+├── requirements.txt        # Dependencies
+└── README.md               # Documentation
 ```
 
 ---
 
-## 📝 How It Works
+## 🚀 How to Run Locally
 
-```
-Your Lecture Audio
-        ↓
-Speech-to-Text Engine
-        ↓
-Complete Transcript
-        ↓
-Text Cleaning & Processing
-        ↓
-Content Analysis
-        ↓
-Generate 3 Formats
-├── Flashcards (Q&A)
-├── Detailed Notes
-└── Summary
+```bash
+python -m venv venv
+venv\Scripts\activate
+pip install -r requirements.txt
+streamlit run app.py
 ```
 
----
-
-## ⏱️ Processing Times
-
-| Audio Length | Processing Time |
-| ------------ | --------------- |
-| 1 min        | 5-10 seconds    |
-| 5 min        | 20-30 seconds   |
-| 10 min       | 40-60 seconds   |
-| 15 min       | 1-2 minutes     |
-| 30 min       | 2-4 minutes     |
-
-_Times vary based on your computer. GPU will be 2-3x faster._
+Then open `http://localhost:8501` in your browser.
 
 ---
 
 ## 🎓 Use Cases
 
-- **Students** - Convert lecture recordings into revision materials
-- **Teachers** - Create study guides from your own lectures
-- **Researchers** - Transcribe interviews and seminars
-- **Online Learning** - Process course videos into notes
+* Students converting lecture recordings into study material
+* Demonstration of AI/ML pipeline implementation
+* Academic projects and AIML internship submissions
 
 ---
 
-## 🐛 Troubleshooting
+## 🧩 Scope & Limitations
 
-**Models taking too long to download?**
-
-- First run downloads ~1GB of models. This is normal, be patient.
-
-**Audio not recognized?**
-
-- Convert to MP3 or WAV using Audacity (free)
-
-**Out of memory?**
-
-- Use shorter audio files (split into 30min chunks)
-
-**Not working?**
-
-- Make sure virtual environment is activated
-- Check internet (models auto-download)
-- Try a short 1-2 min test file first
+* UI/UX is **not the primary focus**
+* Model training is **out of scope**
+* Performance depends on **pre-trained models and hardware**
 
 ---
 
-## 💡 Why I Built This
+## 📌 Learning Outcomes
 
-As a student, I realized converting lecture recordings into study materials manually takes hours. I wanted a tool that could do it automatically - accurately, quickly, and for free.
-
-The goal is simple: **Make studying more efficient.**
-
----
-
-## 📄 License
-
-Open source - Available for personal and educational use.
+* Hands-on experience with AI pipelines
+* Understanding real-world usage of pre-trained ML models
+* Exposure to speech processing and NLP workflows
 
 ---
 
@@ -180,4 +142,8 @@ Open source - Available for personal and educational use.
 
 **Kartik Yadav**
 
-Built with ❤️ for students and learners everywhere.
+---
+
+## 📄 License
+
+Open-source for **educational and academic use**.
